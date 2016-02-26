@@ -7,8 +7,13 @@ namespace HairSalonNS.Objects
 {
   public class Stylist : DBHandler
   {
-    public Stylist()
+    private int _id;
+    private string _name;
+    public static string Table = "stylists";
+    
+    public Stylist(string name, int id = 0)
     {
+      _name = name;
     }
     
     public static void DeleteAll()

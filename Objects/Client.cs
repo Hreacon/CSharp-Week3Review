@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 namespace HairSalonNS.Objects
 {
   public class Client : DBHandler
-  {     
+  {      
     private int _id;
     private string _name;
     private int _stylistId;

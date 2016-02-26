@@ -8,7 +8,7 @@ namespace HairSalonNS
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["header.cshtml"];
+        return View["viewStylists.cshtml", Stylist.GetAll()];
       };
     }
   }

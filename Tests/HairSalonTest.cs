@@ -53,5 +53,12 @@ namespace HairSalonNS
       test.Delete();
       Assert.Equal(0, Stylist.GetAll().Count);
     }
+    [Fact]
+    public void StylistFindsById()
+    {
+      Stylist test = new Stylist("test");
+      test.Save();
+      Assert.Equal(test, Stylist.Find(test.GetId()));
+    }
   }
 }

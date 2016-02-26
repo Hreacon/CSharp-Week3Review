@@ -16,7 +16,7 @@ namespace HairSalonNS
     public void Dispose()
     {
       Stylist.DeleteAll(); // delete all
-      Client.DeleteAll();  
+      Client.DeleteAll();   
     }
     
     [Fact]

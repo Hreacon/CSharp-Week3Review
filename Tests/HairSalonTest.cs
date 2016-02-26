@@ -15,7 +15,13 @@ namespace HairSalonNS
      }
      public void Dispose()
      {
-       HairSalon.DeleteAll();
+       Stylist.DeleteAll();
+     }
+     
+     [Fact]
+     public void StylistHoldsName()
+     {
+       Stylist tamra = new Stylist("Tamra");
      }
   }
 }

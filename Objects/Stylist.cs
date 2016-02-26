@@ -5,10 +5,15 @@ using System.Data.SqlClient;
 
 namespace HairSalonNS.Objects
 {
-  public class HairSalon
+  public class Stylist : DBHandler
   {
-    public HairSalon()
+    public Stylist()
     {
+    }
+    
+    public static void DeleteAll()
+    {
+      
     }
   } // end class
 } // end namespace

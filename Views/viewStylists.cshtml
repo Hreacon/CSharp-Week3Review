@@ -1,0 +1,13 @@
+@Html.Partial("header.cshtml")
+
+<ul>
+  @foreach(var item in Model)
+  {
+    <li><a href="/stylist/@item.GetId()">@item.GetName()</a></li>
+  }
+</ul>
+
+<form action="/addStylist" method="post">
+<label for="name">Stylist Name:</label><input type="text" name="name" autofocus>
+<input type="submit" name="submit" value="Add Stylist">
+</form>

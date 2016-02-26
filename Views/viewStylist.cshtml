@@ -1,13 +1,13 @@
-@Html.Partial("header.cshtml")
+@Html.Partial("header.cstml")
 
-<ul>
-  @foreach(var item in Model)
+<h1> Stylist: @Model.GetName() </h1>
+
+<h3> Clients: </h3>
+
+<!--<ul>
+  @foreach(var item in Model.GetClients() )
   {
-    <li><a href="/stylist/@item.GetId()">@item.GetName</a></li>
+    <li>item.GetName()</li>
   }
-</ul>
+</ul>-->
 
-<form action="/addStylist">
-<label for="name">Stylist Name:</label><input type="text" name="name">
-<input type="submit" name="submit" value="Add Stylist">
-</form>

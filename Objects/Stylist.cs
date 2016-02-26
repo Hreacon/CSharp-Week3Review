@@ -38,6 +38,12 @@ namespace HairSalonNS.Objects
         DBHandler.Delete(Stylist.Table, _id);
       }
     }
+    public static Stylist Find(int id)
+    {
+      string query = "WHERE id = @id";
+      List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@id", id) };
+      return (Stylist) DBHandler.GetObjectFromDB(Stylist.Table, query, MakeObject, parameters);
+    }
     public static List<Stylist> GetAll()
     {
       List<Stylist> output = new List<Stylist>{};

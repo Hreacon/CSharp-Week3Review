@@ -23,5 +23,10 @@ namespace HairSalonNS
      {
        Stylist tamra = new Stylist("Tamra");
      }
+     [Fact]
+     public void StylistDBIsEmptyAtStart()
+     {
+       Assert.Equal(0, Stylist.GetAll().Count);
+     }
   }
 }

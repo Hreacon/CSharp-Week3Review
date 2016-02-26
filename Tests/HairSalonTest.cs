@@ -111,8 +111,14 @@ namespace HairSalonNS
       style.Save();
       Client test = new Client("test", style.GetId());
       test.Save();
-      Assert.Equal(test, style.GetClients()[0]);
-      
+      Assert.Equal(test, style.GetClients()[0]); 
+    }
+    [Fact]
+    public void ClientFindByStringName()
+    {
+      Client dude = new Client("dude", 1);
+      dude.Save();
+      Assert.Equal(dude, Client.Find("dude"));
     }
   }
 }

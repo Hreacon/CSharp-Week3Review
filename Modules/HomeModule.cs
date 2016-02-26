@@ -26,6 +26,9 @@ namespace HairSalonNS
       Get["/stylist/{id}/edit"] = x => {
         return View["editStylist.cshtml", Stylist.Find(int.Parse(x.id))];
       };
+      Get["/stylist/{id}/client/{cid}/edit"] = x => {
+        return View["editClient.cshtml", Client.Find(int.Parse(x.cid))];
+      };
       Post["/stylist/{id}/addClient"] = x => {
         int id = int.Parse(x.id);
         new Client(Request.Form["name"], id).Save();

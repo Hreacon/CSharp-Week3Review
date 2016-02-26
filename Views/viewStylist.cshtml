@@ -1,15 +1,19 @@
 @Html.Partial("header.cshtml")
 
 <h1> Stylist: @Model.GetName() </h1>
-
-<h3> Clients: </h3>
-
-<ul>
-  @foreach(var item in @Model.GetClients() )
-  {
-    <li>@item.GetName()</li>
-  }
-</ul>
+@if(@Model.GetClients().Count > 0)
+{
+  <h3> Clients: </h3>
+  <p>Click to edit</p>
+  <ul class="stylistList">
+    @foreach(var item in @Model.GetClients() )
+    {
+      <li><a href="/stylist/@Model.GetId()/client/@item.GetId()/edit">@item.GetName()</a><a href="/stylist/@Model.GetId()/client/@item.GetId()/delete">Delete Client</a></li>
+    }
+  </ul>
+} else {
+  <h3>No Clients Added Yet</h3>
+}
 
 <form action="/stylist/@Model.GetId()/addClient" method="post">
 <label for="name">Client Name:</label><input type="text" name="name" autofocus>
@@ -17,3 +21,4 @@
 </form>
 
 <a href="/" class="link">Go Back to list of stylists</a>
+<a href="/stylist/@Model.GetId()/edit" class="link"> Edit This Stylsit</a>

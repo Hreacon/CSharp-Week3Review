@@ -1,6 +1,7 @@
 using Nancy;
 using HairSalonNS.Objects;
 using System.Collections.Generic;
+using System;
 namespace HairSalonNS
 {
   public class HomeModule : NancyModule
@@ -11,7 +12,11 @@ namespace HairSalonNS
         return View["viewStylists.cshtml", Stylist.GetAll()];
       };
       Get["/stylist/{id}"] = x => {
-        return View["viewStylist.cshtml", Stylist.Find(int.Parse(x.id))];
+        int id = int.Parse(x.id);
+        Console.WriteLine("Viewing stylist: id " + id);
+        Stylist s = Stylist.Find(id);
+        Console.WriteLine(s.GetName());
+        return View["viewStylist.cshtml", s];
       };
       Get["/stylist/{id}/client/{cid}/delete"] = x => {
         Client delete = Client.Find(int.Parse(x.cid));

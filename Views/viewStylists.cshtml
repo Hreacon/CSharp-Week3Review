@@ -1,9 +1,11 @@
 @Html.Partial("header.cshtml")
 
-<ul>
+<h1>All Stylists:</h1>
+
+<ul class="stylistList">
   @foreach(var item in Model)
   {
-    <li><a href="/stylist/@item.GetId()">@item.GetName()</a></li>
+    <li><a href="/stylist/@item.GetId()">@item.GetName()</a><a href="/stylist/@item.GetId()/delete">Delete Stylist</a></li>
   }
 </ul>
 

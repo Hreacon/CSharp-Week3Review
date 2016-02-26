@@ -52,6 +52,12 @@ namespace HairSalonNS.Objects
       List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@id", id) };
       return (Client) DBHandler.GetObjectFromDB(Client.Table, query, MakeObject, parameters);
     }
+    public static Client Find(string name)
+    {
+      string query = "WHERE " + NameColumn + " LIKE @"+NameColumn;
+      List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@"+NameColumn, "%"+name+"%") };
+      return (Client) DBHandler.GetObjectFromDB(Client.Table, query, MakeObject, parameters);
+    }
     public static List<Client> GetAll()
     {
       List<Client> output = new List<Client>{};

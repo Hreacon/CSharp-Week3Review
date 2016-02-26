@@ -1,26 +1,23 @@
-# _{Application Name}_
+# Hair Salon
 
-#### _{Brief description of application}, {Date of current version}_
+#### Hair Salon Management, Feb 26th, 2016
 
-#### By Nicholas Jensen-Hay and PAIR
+#### By Nicholas Jensen-Hay
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+Lets a hair salon manage stylists with clients attached to stylists. The ability to find a walk in customer by typing in their name links to the stylist they belong to.
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+Please see detailed instructions provided by epicodus here
+https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+### Database Setup
 
-## Known Bugs
-
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+create database hair_salon
+create table stylists (id int identity(1,1), name varchar(255))
+create table clients (id int identity(1,1), name varchar(255), stylist_id int)
 
 ## Support and contact details
 
@@ -28,11 +25,11 @@ Contact Nicholas Jensen-Hay through Github at http://github.com/hreacon/
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+C#, Nancy, Razor
 
 ### License
 
-Copyright (c) 2016 Nicholas Jensen-Hay and PAIR
+Copyright (c) 2016 Nicholas Jensen-Hay
 
 MIT License
 

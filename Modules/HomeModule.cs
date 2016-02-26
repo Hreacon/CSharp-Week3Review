@@ -10,6 +10,10 @@ namespace HairSalonNS
       Get["/"] = _ => {
         return View["viewStylists.cshtml", Stylist.GetAll()];
       };
+      Post["/viewStylist"] = _ => {
+        new Stylist(Request.Form["name"]).Save();
+        return View["viewStylists.cshtml", Stylist.GetAll()];
+      };
     }
   }
 }

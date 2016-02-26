@@ -32,3 +32,26 @@ input {
   color:white;
   background: black;
 }
+.stylistList {
+  list-style: none;
+}
+.stylistList li {
+  width:80%;
+  border-bottom:1px solid black;
+}
+
+.stylistList li a {
+  border:1px solid gray;
+  border-radius:10px;
+  margin: 10px;
+  width:40%;
+  display: inline-block;
+  text-align:center;
+  padding:10px;
+  font-size:1.3em;
+  text-decoration:none;
+}
+.stylistList li a:hover {
+  background:black;
+  color:white;
+}

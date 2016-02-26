@@ -23,6 +23,9 @@ namespace HairSalonNS
         delete.Delete();
         return View["viewStylists.cshtml", Stylist.GetAll()];
       };
+      Get["/stylist/{id}/edit"] = x => {
+        return View["editStylist.cshtml", Stylist.Find(int.Parse(x.id))];
+      };
       Post["/stylist/{id}/addClient"] = x => {
         int id = int.Parse(x.id);
         new Client(Request.Form["name"], id).Save();

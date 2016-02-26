@@ -39,7 +39,7 @@ namespace HairSalonNS.Objects
     }
     public static void DeleteAll()
     {
-      
+      DBHandler.DeleteAll(Stylist.Table);
     }
     // helper functions
     public static Object MakeObject(SqlDataReader rdr)

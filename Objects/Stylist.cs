@@ -31,6 +31,13 @@ namespace HairSalonNS.Objects
       if(_id == 0)
         _id = id;
     }
+    public void Delete()
+    {
+      if(_id > 0)
+      {
+        DBHandler.Delete(Stylist.Table, _id);
+      }
+    }
     public static List<Stylist> GetAll()
     {
       List<Stylist> output = new List<Stylist>{};

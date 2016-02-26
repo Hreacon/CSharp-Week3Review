@@ -79,7 +79,7 @@ namespace HairSalonNS
       test.Save();
       Assert.Equal(test, Client.GetAll()[0]);
     }
-    [Fact]
+    [Fact] 
     public void ClientUpdatesDatabase() // update
     {
       Client test = new Client("Test", 1);

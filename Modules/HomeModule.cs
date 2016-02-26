@@ -35,6 +35,12 @@ namespace HairSalonNS
         new Stylist(Request.Form["name"]).Save();
         return View["viewStylists.cshtml", Stylist.GetAll()];
       };
+      Post["/stylist/update"] = _ => {
+        Stylist edit = Stylist.Find(int.Parse(Request.Form["id"]));
+        edit.SetName(Request.Form["name"]);
+        edit.Save();
+        return View["viewStylist.cshtml", edit];
+      };
     }
   }
 }

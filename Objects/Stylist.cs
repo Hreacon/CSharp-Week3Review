@@ -35,7 +35,16 @@ namespace HairSalonNS.Objects
     {
       if(_id > 0)
       {
+        // delete clients
+        DeleteClients();
         DBHandler.Delete(Stylist.Table, _id);
+      }
+    }
+    public void DeleteClients()
+    {
+      foreach(Client c in GetClients())
+      {
+        c.Delete();
       }
     }
     public List<Client> GetClients()
@@ -66,6 +75,7 @@ namespace HairSalonNS.Objects
     }
     public static void DeleteAll()
     {
+      DBHandler.DeleteAll(Client.Table);
       DBHandler.DeleteAll(Stylist.Table);
     }
     // helper functions

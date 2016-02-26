@@ -22,11 +22,14 @@ namespace HairSalonNS.Objects
     
     public int GetId() { return _id; }
     public string GetName() { return _name; }
+    public void SetName(string name) { _name = name; }
     
     public void Save()
     {
       List<SqlParameter> parameters = new List<SqlParameter> { new SqlParameter("@"+NameColumn, GetName())};
-      base.Save(Stylist.Table, _columns, parameters, _id);
+      int id = base.Save(Stylist.Table, _columns, parameters, _id);
+      if(_id == 0)
+        _id = id;
     }
     public static List<Stylist> GetAll()
     {

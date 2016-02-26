@@ -16,12 +16,12 @@ namespace HairSalonNS
         Console.WriteLine("Viewing stylist: id " + id);
         Stylist s = Stylist.Find(id);
         Console.WriteLine(s.GetName());
-        return View["viewStylist.cshtml", s];
+      return View["viewStylist.cshtml", s];
       };
       Get["/stylist/{id}/client/{cid}/delete"] = x => {
         Client delete = Client.Find(int.Parse(x.cid));
         delete.Delete();
-        return View["viewStylists.cshtml", Stylist.GetAll()];
+        return View["viewStylist.cshtml", Stylist.Find(int.Parse(x.id))];
       };
       Get["/stylist/{id}/delete"] = x => {
         Stylist delete = Stylist.Find(int.Parse(x.id));
@@ -54,6 +54,10 @@ namespace HairSalonNS
         edit.SetName(Request.Form["name"]);
         edit.Save();
         return View["viewStylist.cshtml", Stylist.Find(edit.GetStylistId())];
+      };
+      Post["/client/find"] = _ => {
+        string name = Request.Form["name"];
+        return View["viewStylist.cshtml", Stylist.Find(Client.Find(name).GetStylistId())];
       };
     }
   }

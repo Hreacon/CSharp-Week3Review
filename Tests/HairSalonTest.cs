@@ -35,5 +35,14 @@ namespace HairSalonNS
        test.Save();
        Assert.Equal(test, Stylist.GetAll()[0]);
      }
+     [Fact]
+     public void StylistUpdatesDatabase()
+     {
+       Stylist test = new Stylist("Test");
+       test.Save();
+       test.SetName("Tester");
+       test.Save();
+       Assert.Equal("Tester", Stylist.GetAll()[0].GetName());
+     }
   }
 }

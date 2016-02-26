@@ -19,6 +19,7 @@ namespace HairSalonNS.Objects
     {
       _name = name;
       _id = id;
+      _stylistId = stylistId;
       _columns = new List<string> { NameColumn, StylistIdColumn };
     }
     

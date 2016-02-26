@@ -1,0 +1,7 @@
+@Html.Partial("header.cshtml")
+
+<h1> Edit Client @Model.GetName()</h1>
+<form action="/stylist/client/update" method="post">
+  <label for="name">Update Name:</label><input type="text" name="name" value="@Model.GetName()">
+  <input type="submit" value="Update Client">
+</form>

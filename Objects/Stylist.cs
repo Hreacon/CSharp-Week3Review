@@ -16,9 +16,23 @@ namespace HairSalonNS.Objects
       _name = name;
     }
     
+    public static List<Stylist> GetAll()
+    {
+      List<Stylist> output = new List<Stylist>{};
+      foreach(Object o in DBHandler.GetAll(Stylist.Table, MakeObject))
+      {
+        output.Add((Stylist)o);
+      }
+      return output;
+    }
     public static void DeleteAll()
     {
       
+    }
+    // helper functions
+    public static Object MakeObject(SqlDataReader rdr)
+    {
+      return new Stylist(rdr.GetString(1), rdr.GetInt32(0));
     }
   } // end class
 } // end namespace

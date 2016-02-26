@@ -46,5 +46,17 @@ namespace HairSalonNS.Objects
     {
       return new Stylist(rdr.GetString(1), rdr.GetInt32(0));
     }
+    public override bool Equals(System.Object other)
+    {
+      bool output = false;
+      if(!(other is Stylist))
+      {
+        output = false;
+      } else {
+        Stylist otherStylist = (Stylist) other;
+        output = GetName() == otherStylist.GetName();
+      }
+      return output;
+    }
   } // end class
 } // end namespace
